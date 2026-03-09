@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriella Borjas | Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-main: #e6f1ff;
+            --accent-blue: #64ffda;
+            --secondary-blue: #112240;
+            --highlight: #3066be;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Essential for Checkpoint 1: Ensuring everything is "Above the Fold" */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 80px); /* Big, responsive font */
+            font-weight: 900;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .role-descriptor {
+            font-size: clamp(18px, 3vw, 32px);
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .featured-card {
+            background-color: var(--secondary-blue);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 5px solid var(--highlight);
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .featured-card h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: var(--text-main);
+        }
+
+        .featured-card p {
+            font-size: 18px;
+            color: #8892b0;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation for later phases */
+        nav {
+            position: absolute;
+            top: 30px;
+            right: 10%;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Gabriella Borjas</h1>
+
+        <div class="role-descriptor">Full-Stack Developer | Software Engineer</div>
+
+        <div class="featured-card">
+            <h2>Featured Project: Fitness Tracker</h2>
+            <p>
+                A comprehensive web application designed to track workouts and monitor progress. 
+                Built with a Python Flask backend and PostgreSQL to handle persistent user data.
+            </p>
+            <a href="#" class="btn">View Live App →</a>
+        </div>
+    </section>
+
+</body>
+</html>
