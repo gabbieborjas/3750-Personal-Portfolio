@@ -38,33 +38,45 @@
         }
         nav a { color: var(--accent-blue); text-decoration: none; margin-left: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Hero / Homepage */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 0; }
-        h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; margin: 0; }
+        /* Hero / Homepage - The 10-Second Path Start */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        h1 { font-size: clamp(45px, 8vw, 90px); font-weight: 900; margin: 0; }
         .role-descriptor { font-size: clamp(18px, 3vw, 32px); color: var(--accent-blue); font-weight: 700; margin: 10px 0 30px 0; }
 
-        /* General Card Design */
-        .card {
-            background: var(--secondary-blue); padding: 30px; border-radius: 12px;
-            margin-bottom: 40px; border-left: 5px solid var(--highlight);
+        /* Featured Card (Most Obvious Path) */
+        .featured-card {
+            background: var(--secondary-blue); 
+            padding: 40px; 
+            border-radius: 12px;
+            border: 2px solid var(--accent-blue);
+            max-width: 800px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        .card h2, .card h3 { color: var(--accent-blue); margin-top: 0; }
+
+        /* Buttons (High Contrast for 10-Second Path) */
+        .btn-primary {
+            display: inline-block; padding: 18px 32px; background: var(--accent-blue);
+            color: var(--bg-color); text-decoration: none; border-radius: 4px; 
+            font-weight: 900; font-size: 18px; transition: 0.3s; margin-top: 20px;
+            box-shadow: 0 4px 14px 0 rgba(100, 255, 218, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-3px); }
+
+        .btn-secondary {
+            display: inline-block; padding: 12px 20px; border: 1.5px solid var(--accent-blue);
+            color: var(--accent-blue); text-decoration: none; border-radius: 4px; 
+            font-weight: 700; transition: 0.3s; margin-top: 15px; font-size: 14px;
+        }
+        .btn-secondary:hover { background: rgba(100, 255, 218, 0.1); }
+
+        /* General Project Cards */
+        .card { background: var(--secondary-blue); padding: 30px; border-radius: 12px; margin-bottom: 40px; }
+        .card h3 { color: var(--accent-blue); margin-top: 0; font-size: 24px; }
         .card p { color: var(--text-dim); }
 
-        .btn {
-            display: inline-block; padding: 10px 20px; border: 2px solid var(--accent-blue);
-            color: var(--accent-blue); text-decoration: none; border-radius: 4px; font-weight: 700;
-            transition: 0.3s; margin-top: 10px; font-size: 14px;
-        }
-        .btn:hover { background: rgba(100, 255, 218, 0.1); }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
-        /* Projects Section */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .phase-box { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(100, 255, 218, 0.1); }
-        .phase-box span { color: var(--accent-blue); font-weight: 900; font-size: 11px; text-transform: uppercase; }
-        .coming-soon { color: #f44336; font-size: 12px; font-weight: bold; font-style: italic; }
-
-        footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 14px; }
+        footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 14px; border-top: 1px solid var(--secondary-blue); }
     </style>
 </head>
 <body>
@@ -73,93 +85,74 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <section id="home" class="hero">
-        <h1>Gabriella Borjas</h1>
+        <p style="color: var(--accent-blue); font-family: monospace; margin-bottom: 10px;">Portfolio 2026</p>
+        <h1>Gabriella Borjas.</h1>
         <div class="role-descriptor">Full-Stack Developer | Software Engineer</div>
         
-        <div class="card" style="max-width: 650px;">
-            <h3>Featured: Personal Fitness Tracker</h3>
-            <p>
-                A data-intensive application built with <strong>Python Flask</strong> and <strong>PostgreSQL</strong>. 
-                I engineered this tool to provide users with real-time telemetry and progress visualization.
+        <div class="featured-card">
+            <span style="color: var(--accent-blue); font-weight: 700; font-size: 12px; text-transform: uppercase;">Primary Project</span>
+            <h2>Personal Fitness Tracker</h2>
+            <p style="font-size: 18px;">
+                Athletes struggle with fragmented workout data across multiple platforms. 
+                This full-stack application centralizes performance telemetry into a single, real-time visualization dashboard. 
+                I implemented a <strong>Python Flask</strong> backend with a <strong>PostgreSQL</strong> relational schema to ensure 100% data integrity for multi-user sessions.
             </p>
-            <a href="https://fitnesstracker.online/" target="_blank" class="btn">View Live App →</a>
+            <a href="https://fitnesstracker.online/" target="_blank" class="btn-primary">VIEW LIVE APP →</a>
+            <a href="https://github.com/gabbieborjas/Solo-Project-2" target="_blank" class="btn-secondary" style="margin-left: 15px;">GitHub Code</a>
         </div>
     </section>
 
     <section id="about">
-        <h2 style="font-size: 40px; margin-bottom: 20px;">About Me</h2>
+        <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">01.</span> Behind the Code</h2>
         <div class="card">
-            <p>
-                I am a 22-year-old Computer Science student at <strong>Clemson University</strong>. My journey into tech is driven by a desire to bridge the gap between complex software systems and human-centric design. 
-            </p>
-            <p>
-                Beyond my academic work, I lead a high-energy lifestyle as a <strong>Barre Group Fitness Instructor</strong> and a marathon trainee. I thrive in collaborative environments that demand both technical precision and creative problem-solving. Currently, I am focused on mastering full-stack architectures and will be starting my <strong>Full-Time Software Engineering career in August 2026</strong>.
-            </p>
+            <p>I am a Computer Science major at <strong>Clemson University</strong> (Class of 2026) with a passion for building scalable, high-impact software. My work is defined by the same discipline I bring to my role as a <strong>Barre fitness instructor</strong> and marathon trainee: consistency, precision, and performance.</p>
+            <p>Starting in <strong>August 2026</strong>, I will be transitioning into a full-time Software Engineering role, applying my skills in React, Python, and cloud architecture to real-world products.</p>
         </div>
     </section>
 
     <section id="projects">
-        <h2 style="font-size: 40px; margin-bottom: 20px;">Projects</h2>
+        <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">02.</span> Professional Work</h2>
 
-        <div class="card">
-            <h3>Fitness Tracker (Solo App)</h3>
-            <p>This project was born out of my passion for fitness and data. It handles multi-user authentication, secure data storage, and performance analytics. </p>
-            <p><strong>Architecture Decision:</strong> I chose PostgreSQL for its robust handling of relational data, ensuring that every workout logged is accurately mapped to the specific user telemetry.</p>
-            <a href="https://fitnesstracker.online/" class="btn">Live App</a>
-            <a href="#" class="btn" style="border-color: var(--text-dim); color: var(--text-dim);">GitHub <span class="coming-soon">(Coming Soon)</span></a>
-        </div>
-
-        <div class="card">
-            <h3>Final Team Project (Roadmap)</h3>
-            <p>A collaborative 8-week engineering cycle designed to demonstrate iterative shipping.</p>
-            <div class="phase-grid">
-                <div class="phase-box">
-                    <span>Phase 1: Foundation</span>
-                    <h4>Static Interface</h4>
-                    <p style="font-size: 14px;">Focused on responsive navigation and core UI flows.</p>
-                    <span class="coming-soon">Link Coming Soon</span>
-                </div>
-                <div class="phase-box">
-                    <span>Phase 2: Integration</span>
-                    <h4>Database & API</h4>
-                    <p style="font-size: 14px;">Connecting the frontend to a persistent storage layer.</p>
-                    <span class="coming-soon">Link Coming Soon</span>
-                </div>
-                <div class="phase-box">
-                    <span>Phase 3: Real-Time</span>
-                    <h4>Multi-User Features</h4>
-                    <p style="font-size: 14px;">Implementing live notifications and data sync.</p>
-                    <span class="coming-soon">Link Coming Soon</span>
-                </div>
+        <div class="project-grid">
+            <div class="card">
+                <h3>Battleship Game</h3>
+                <p>
+                    Collaborative online gaming requires instant synchronization and stable state management. 
+                    This project delivers a multi-user Battleship experience with real-time turn handling. 
+                    The interesting challenge was handling concurrent moves, which I resolved using a custom event-handling system.
+                </p>
+                <a href="https://battleship-1-qpm6.onrender.com" target="_blank" class="btn-secondary">Live Demo</a>
+                <a href="https://github.com/Anabelt-hub/Battleship_1" target="_blank" class="btn-secondary">GitHub</a>
             </div>
-        </div>
 
-        <div class="card">
-            <h3>Gibis Kini Website</h3>
-            <p>A specialized web project designed for branding and user engagement in the fitness/apparel space.</p>
-            <a href="#" class="btn">Website <span class="coming-soon">(Coming Soon)</span></a>
-            <a href="#" class="btn" style="border-color: var(--text-dim); color: var(--text-dim);">GitHub <span class="coming-soon">(Coming Soon)</span></a>
+            <div class="card">
+                <h3>Gibis Kinies Website</h3>
+                <p>
+                    E-commerce platforms in the apparel space need to be high-speed and visually compelling to drive conversions. 
+                    I built this responsive frontend using <strong>React</strong> and <strong>JavaScript</strong> to ensure a seamless mobile-first shopping experience. 
+                    The architecture focuses on optimized image loading and fluid user transitions.
+                </p>
+                <a href="https://soft-sprite-8b60d0.netlify.app/" target="_blank" class="btn-secondary">Live Demo</a>
+                <a href="https://github.com/gabbieborjas/gibis-kinis" target="_blank" class="btn-secondary">GitHub</a>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2 style="font-size: 40px; margin-bottom: 20px;">Contact Me</h2>
-        <div class="card" style="text-align: center;">
-            <p>I'm always open to discussing new projects, creative ideas, or fitness tips!</p>
-            <h3 style="margin: 20px 0;">gborjas@clemson.edu</h3>
-            <div style="margin-top: 20px;">
-                <a href="mailto:gborjas@clemson.edu" class="btn">Send an Email</a>
-                <a href="https://www.linkedin.com/in/gabriella-borjas" target="_blank" class="btn">LinkedIn</a>
-            </div>
+    <section id="contact" style="text-align: center;">
+        <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">03.</span> Contact Me</h2>
+        <div class="card">
+            <p>Ready to ship something new? I'm currently seeking opportunities for August 2026.</p>
+            <a href="mailto:gborjas@clemson.edu" class="btn-primary">Email Gabriella</a>
+            <p style="margin-top: 20px; font-family: monospace;">gborjas@clemson.edu</p>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Gabriella Borjas | Checkpoint 1 Submission
+        &copy; 2026 Gabriella Borjas
     </footer>
 
 </body>
