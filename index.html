@@ -25,9 +25,9 @@
             scroll-behavior: smooth;
         }
 
-        section { padding: 100px 10%; max-width: 1200px; margin: 0 auto; }
+        section { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
 
-        /* Navigation Tabs */
+        /* Navigation */
         nav {
             position: fixed; top: 0; width: 100%;
             background: rgba(10, 25, 47, 0.95);
@@ -38,12 +38,12 @@
         }
         nav a { color: var(--accent-blue); text-decoration: none; margin-left: 30px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Hero / Homepage - The 10-Second Path Start */
+        /* Hero / Homepage (The 5-Second Test Area) */
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        h1 { font-size: clamp(45px, 8vw, 90px); font-weight: 900; margin: 0; }
+        h1 { font-size: clamp(45px, 8vw, 90px); font-weight: 900; margin: 0; color: var(--text-main); }
         .role-descriptor { font-size: clamp(18px, 3vw, 32px); color: var(--accent-blue); font-weight: 700; margin: 10px 0 30px 0; }
 
-        /* Featured Card (Most Obvious Path) */
+        /* Featured Card (10-Second Path) */
         .featured-card {
             background: var(--secondary-blue); 
             padding: 40px; 
@@ -53,14 +53,12 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        /* Buttons (High Contrast for 10-Second Path) */
         .btn-primary {
             display: inline-block; padding: 18px 32px; background: var(--accent-blue);
             color: var(--bg-color); text-decoration: none; border-radius: 4px; 
             font-weight: 900; font-size: 18px; transition: 0.3s; margin-top: 20px;
-            box-shadow: 0 4px 14px 0 rgba(100, 255, 218, 0.3);
         }
-        .btn-primary:hover { transform: translateY(-3px); }
+        .btn-primary:hover { transform: translateY(-3px); background: #52e0c4; }
 
         .btn-secondary {
             display: inline-block; padding: 12px 20px; border: 1.5px solid var(--accent-blue);
@@ -74,9 +72,18 @@
         .card h3 { color: var(--accent-blue); margin-top: 0; font-size: 24px; }
         .card p { color: var(--text-dim); }
 
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .phase-box { background: rgba(10, 25, 47, 0.5); padding: 20px; border-radius: 8px; border: 1px solid rgba(100, 255, 218, 0.2); }
+        .phase-box h4 { margin: 10px 0; font-size: 16px; color: var(--text-main); }
+        .phase-link { color: var(--accent-blue); text-decoration: none; font-size: 13px; font-weight: bold; }
 
         footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 14px; border-top: 1px solid var(--secondary-blue); }
+
+        @media (max-width: 768px) {
+            nav { justify-content: center; padding: 15px; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            section { padding: 60px 5%; }
+        }
     </style>
 </head>
 <body>
@@ -89,17 +96,17 @@
     </nav>
 
     <section id="home" class="hero">
-        <p style="color: var(--accent-blue); font-family: monospace; margin-bottom: 10px;">Portfolio 2026</p>
+        <p style="color: var(--accent-blue); font-family: monospace; margin-bottom: 10px;">Hi, I'm</p>
         <h1>Gabriella Borjas.</h1>
         <div class="role-descriptor">Full-Stack Developer | Software Engineer</div>
         
         <div class="featured-card">
-            <span style="color: var(--accent-blue); font-weight: 700; font-size: 12px; text-transform: uppercase;">Primary Project</span>
+            <span style="color: var(--accent-blue); font-weight: 700; font-size: 12px; text-transform: uppercase;">Featured Project</span>
             <h2>Personal Fitness Tracker</h2>
             <p style="font-size: 18px;">
-                Athletes struggle with fragmented workout data across multiple platforms. 
-                This full-stack application centralizes performance telemetry into a single, real-time visualization dashboard. 
-                I implemented a <strong>Python Flask</strong> backend with a <strong>PostgreSQL</strong> relational schema to ensure 100% data integrity for multi-user sessions.
+                Athletes struggle to visualize performance trends across fragmented data sources. 
+                This platform centralizes workout telemetry into a real-time dashboard with persistent progress tracking. 
+                I engineered a <strong>Python Flask</strong> backend with a <strong>PostgreSQL</strong> relational schema to ensure 100% data integrity for multi-user history.
             </p>
             <a href="https://fitnesstracker.online/" target="_blank" class="btn-primary">VIEW LIVE APP →</a>
             <a href="https://github.com/gabbieborjas/Solo-Project-2" target="_blank" class="btn-secondary" style="margin-left: 15px;">GitHub Code</a>
@@ -109,50 +116,63 @@
     <section id="about">
         <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">01.</span> Behind the Code</h2>
         <div class="card">
-            <p>I am a Computer Science major at <strong>Clemson University</strong> (Class of 2026) with a passion for building scalable, high-impact software. My work is defined by the same discipline I bring to my role as a <strong>Barre fitness instructor</strong> and marathon trainee: consistency, precision, and performance.</p>
-            <p>Starting in <strong>August 2026</strong>, I will be transitioning into a full-time Software Engineering role, applying my skills in React, Python, and cloud architecture to real-world products.</p>
+            <p>I am a Computer Science major at <strong>Clemson University</strong> (Class of 2026) dedicated to shipping high-quality, scalable software. I bring the same discipline to engineering that I use as a <strong>Clemson Campus Rec Barre Instructor</strong> and marathon runner: a focus on precision, iterative growth, and performance.</p>
+            <p>I specialize in React, JavaScript, and Python. Starting in <strong>August 2026</strong>, I will begin my full-time professional career as a Software Engineer.</p>
         </div>
     </section>
 
     <section id="projects">
         <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">02.</span> Professional Work</h2>
 
-        <div class="project-grid">
-            <div class="card">
-                <h3>Battleship Game</h3>
-                <p>
-                    Collaborative online gaming requires instant synchronization and stable state management. 
-                    This project delivers a multi-user Battleship experience with real-time turn handling. 
-                    The interesting challenge was handling concurrent moves, which I resolved using a custom event-handling system.
-                </p>
-                <a href="https://battleship-1-qpm6.onrender.com" target="_blank" class="btn-secondary">Live Demo</a>
-                <a href="https://github.com/Anabelt-hub/Battleship_1" target="_blank" class="btn-secondary">GitHub</a>
+        <div class="card">
+            <h3>Team Project: Battleship Game</h3>
+            <p>Collaborative gaming requires zero-latency synchronization and secure session handling. This project demonstrates the iterative shipping of a multi-user Battleship experience. The most interesting challenge was handling concurrent moves, which we resolved by implementing a custom event-handling system.</p>
+            
+            <div class="phase-grid">
+                <div class="phase-box">
+                    <span style="font-size: 10px; color: var(--accent-blue);">PHASE 1</span>
+                    <h4>Static Foundation</h4>
+                    <p style="font-size: 13px;">Core UI/UX and game board architecture.</p>
+                    <p style="font-size: 12px;"><strong>My Role:</strong> Frontend Component Design.</p>
+                    <a href="https://battleship-1-qpm6.onrender.com" class="phase-link">Live Phase 1 →</a>
+                </div>
+                <div class="phase-box">
+                    <span style="font-size: 10px; color: var(--accent-blue);">PHASE 2</span>
+                    <h4>Database Sync</h4>
+                    <p style="font-size: 13px;">Added persistent storage and user auth.</p>
+                    <p style="font-size: 12px;"><strong>My Role:</strong> API Route Integration.</p>
+                    <a href="https://battleship-1-qpm6.onrender.com" class="phase-link">Live Phase 2 →</a>
+                </div>
+                <div class="phase-box">
+                    <span style="font-size: 10px; color: var(--accent-blue);">PHASE 3</span>
+                    <h4>Multi-User Play</h4>
+                    <p style="font-size: 13px;">Final real-time turn-based logic.</p>
+                    <p style="font-size: 12px;"><strong>My Role:</strong> Logic Sync & Conflict Handling.</p>
+                    <a href="https://battleship-1-qpm6.onrender.com" class="phase-link">Live Phase 3 →</a>
+                </div>
             </div>
+            <a href="https://github.com/Anabelt-hub/Battleship_1" target="_blank" class="btn-secondary">GitHub Repository</a>
+        </div>
 
-            <div class="card">
-                <h3>Gibis Kinies Website</h3>
-                <p>
-                    E-commerce platforms in the apparel space need to be high-speed and visually compelling to drive conversions. 
-                    I built this responsive frontend using <strong>React</strong> and <strong>JavaScript</strong> to ensure a seamless mobile-first shopping experience. 
-                    The architecture focuses on optimized image loading and fluid user transitions.
-                </p>
-                <a href="https://soft-sprite-8b60d0.netlify.app/" target="_blank" class="btn-secondary">Live Demo</a>
-                <a href="https://github.com/gabbieborjas/gibis-kinis" target="_blank" class="btn-secondary">GitHub</a>
-            </div>
+        <div class="card">
+            <h3>Gibis Kinis Website</h3>
+            <p>E-commerce platforms must prioritize high-speed visual delivery to drive user engagement. I built this responsive frontend using <strong>React</strong> to ensure a seamless mobile-first shopping experience. The architecture focuses on optimized asset loading and fluid state transitions.</p>
+            <a href="https://soft-sprite-8b60d0.netlify.app/" target="_blank" class="btn-secondary">Live Demo</a>
+            <a href="https://github.com/gabbieborjas/gibis-kinis" target="_blank" class="btn-secondary">GitHub Code</a>
         </div>
     </section>
 
     <section id="contact" style="text-align: center;">
-        <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">03.</span> Contact Me</h2>
+        <h2 style="font-size: 32px;"><span style="color: var(--accent-blue);">03.</span> Contact</h2>
         <div class="card">
-            <p>Ready to ship something new? I'm currently seeking opportunities for August 2026.</p>
-            <a href="mailto:gborjas@clemson.edu" class="btn-primary">Email Gabriella</a>
-            <p style="margin-top: 20px; font-family: monospace;">gborjas@clemson.edu</p>
+            <p>Currently seeking opportunities starting August 2026.</p>
+            <a href="mailto:gborjas@clemson.edu" class="btn-primary">Email Me</a>
+            <p style="margin-top: 20px; font-family: monospace; color: var(--accent-blue);">gborjas@clemson.edu</p>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Gabriella Borjas
+        &copy; 2026 Gabriella Borjas | Built with Inter & Clean Code
     </footer>
 
 </body>
